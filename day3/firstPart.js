@@ -13,7 +13,6 @@ const fs = require("fs");
 const { arrayBuffer } = require("stream/consumers");
 const data = fs.readFileSync("./file.txt", { encoding: "utf8", flag: "r" });
 const dataToArray = [...data];
-// console.log(dataToArray);
 
 // Function that separate the different rucksucks in an array:
 let rucksuck = [];
@@ -23,7 +22,6 @@ function separateRucksucks() {
   for (let x = 0; x < dataToArray.length; x++) {
     if (dataToArray[x] != "\n") {
       rucksuck.push(dataToArray[x]);
-      // rucksuck2 = rucksuck.toString();
     }
     if (dataToArray[x] === "\n" || x == dataToArray.length - 1) {
       rucksuck2 = rucksuck.join("");
@@ -31,7 +29,6 @@ function separateRucksucks() {
       rucksuck = [];
     }
   }
-  return arrayOfRucksucks;
 }
 separateRucksucks();
 
@@ -74,11 +71,9 @@ function arrayOfRepeatedLetters(testArray) {
     let repeatedLetter1 = repeatedLetter(compartment1, compartment2);
     arrayWithLetters.push(repeatedLetter1);
   }
-  return arrayWithLetters;
 }
 arrayOfRepeatedLetters(arrayOfRucksucks);
 
-let upperArrayTest = ["c", "w", "s", "T", "r", "Z", "M", "H", "J", "T", "j", "D"];
 // Function that sum all the values of all the repeated letters:
 function summationOfLetters() {
   let summation = 0;
@@ -91,7 +86,6 @@ function summationOfLetters() {
     }
   }
   console.log(summation);
-  return summation;
 }
 
 summationOfLetters();

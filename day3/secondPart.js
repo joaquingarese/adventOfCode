@@ -7,12 +7,12 @@ for (let x = 0; x < alphabet.length; x++) {
   letter = alphabet[x].toLowerCase();
   alphabetLowercase.push(letter);
 }
+
 // Put all the rusucks inside an array:
 const fs = require("fs");
 const { arrayBuffer } = require("stream/consumers");
 const data = fs.readFileSync("./file.txt", { encoding: "utf8", flag: "r" });
 const dataToArray = [...data];
-// console.log(dataToArray);
 
 // Function that separate the different rucksucks in an array:
 let rucksuck = [];
@@ -49,16 +49,13 @@ function uppercaseValues(V) {
 }
 
 // Now we have to go through 3 arrays, and find the only letter that is repeated:
-
 const arrayOfBadges = [];
 function findingBadge(arrayPosition1, arrayPosition2, arrayPosition3) {
-  // let contador = 0;
   for (let x = 0; x < arrayPosition1.length; x++) {
     for (let i = 0; i < arrayPosition2.length; i++) {
       if (arrayPosition1[x] === arrayPosition2[i]) {
         for (let m = 0; m < arrayPosition3.length; m++) {
           if (arrayPosition2[i] === arrayPosition3[m]) {
-            // arrayOfBadges.push(arrayOfRucksucks[2][m]);
             return arrayPosition3[m];
           }
         }
@@ -67,14 +64,9 @@ function findingBadge(arrayPosition1, arrayPosition2, arrayPosition3) {
   }
 }
 
-// arrayOfBadges.push(findingBadge());
-
 for (let j = 0; j < arrayOfRucksucks.length; j = j + 3) {
   arrayOfBadges.push(findingBadge(arrayOfRucksucks[j], arrayOfRucksucks[j + 1], arrayOfRucksucks[j + 2]));
 }
-
-// console.log(arrayOfBadges);
-// console.log(arrayOfBadges.length);
 
 let sum = 0;
 for (let r = 0; r < arrayOfBadges.length; r++) {
