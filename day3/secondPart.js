@@ -1,3 +1,12 @@
+// Define the values of all the letters, Uppercase and Lowercase, crear dos arrays con clave:valor para cada uno de los caracteres, tanto en mayuscula como en minuscula.
+const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+const alphabetLowercase = [];
+
+for (let x = 0; x < alphabet.length; x++) {
+  let letter = "";
+  letter = alphabet[x].toLowerCase();
+  alphabetLowercase.push(letter);
+}
 // Put all the rusucks inside an array:
 const fs = require("fs");
 const { arrayBuffer } = require("stream/consumers");
@@ -42,28 +51,15 @@ function uppercaseValues(V) {
 // Now we have to go through 3 arrays, and find the only letter that is repeated:
 
 const arrayOfBadges = [];
-function findingbadge() {
-  let contador = 0;
-  for (let f = 0; f < 101; f++) {
-    for (let x = 0; x < arrayOfRucksucks[0].length; x++) {
-      if (contador >= 2) {
-        contador = 0;
-      }
-      for (let i = 0; i < arrayOfRucksucks[1].length; i++) {
-        if (contador >= 2) {
-          break;
-        }
-        if (arrayOfRucksucks[0][x] === arrayOfRucksucks[1][i]) {
-          contador++;
-          for (let m = 0; m < arrayOfRucksucks[2].length; m++) {
-            if (arrayOfRucksucks[1][i] === arrayOfRucksucks[2][m]) {
-              contador++;
-              if (contador >= 2) {
-                arrayOfBadges.push(arrayOfRucksucks[2][m]);
-                arrayOfRucksucks.splice(0, 3);
-                break;
-              }
-            }
+function findingBadge(arrayPosition1, arrayPosition2, arrayPosition3) {
+  // let contador = 0;
+  for (let x = 0; x < arrayPosition1.length; x++) {
+    for (let i = 0; i < arrayPosition2.length; i++) {
+      if (arrayPosition1[x] === arrayPosition2[i]) {
+        for (let m = 0; m < arrayPosition3.length; m++) {
+          if (arrayPosition2[i] === arrayPosition3[m]) {
+            // arrayOfBadges.push(arrayOfRucksucks[2][m]);
+            return arrayPosition3[m];
           }
         }
       }
@@ -71,7 +67,20 @@ function findingbadge() {
   }
 }
 
-findingbadge();
+// arrayOfBadges.push(findingBadge());
 
-// console.log(arrayOfRucksucks[0].length);
-console.log(arrayOfBadges);
+for (let j = 0; j < arrayOfRucksucks.length; j = j + 3) {
+  arrayOfBadges.push(findingBadge(arrayOfRucksucks[j], arrayOfRucksucks[j + 1], arrayOfRucksucks[j + 2]));
+}
+
+// console.log(arrayOfBadges);
+// console.log(arrayOfBadges.length);
+
+let sum = 0;
+for (let r = 0; r < arrayOfBadges.length; r++) {
+  if (arrayOfBadges[r] === arrayOfBadges[r].toUpperCase()) {
+    sum += uppercaseValues(arrayOfBadges[r]);
+  } else sum += lowercaseValues(arrayOfBadges[r]);
+}
+
+console.log(sum);
