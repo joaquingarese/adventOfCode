@@ -88,4 +88,4 @@ function summationOfLetters() {
   console.log(summation);
 }
 
-summationOfLetters();
+// summationOfLetters();
