@@ -1,0 +1,5 @@
+- Make a function that recognices if a character is repeated within 4 characters.
+- If the character is repeated, go back to the position 1 and start again.
+- Make the counter go to the length + 1 where it stoped. 
+- counter2 is the one that says if we got the new marker. 
+- If the counter2 (that represents the start-of-packet-marker) gets into 4, add +4 to counter, and that is the number of characters that are needed to be processed after finding the first 
