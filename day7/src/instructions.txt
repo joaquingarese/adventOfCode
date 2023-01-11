@@ -1,0 +1,78 @@
+- Find the total sum of directories with a total size of at most 100.000. Directories inside directories count as 2 different, so we have to sum them. 
+
+Wich are the different commands that may appear in the strings of the array
+    - $ cd /
+    - $ cd ed
+    - $ cd ..
+    - $ ls 
+    - 1231422314 cdacddc
+    - dir jsdjd
+    - dir sdnsd
+
+- Following the input route to see how it works: 
+
+- / (dir)
+  - 150961 cmnwnpwb
+  - 28669 hhcp.jzd
+  - jssbn (dir)
+    - 89372 dvlb
+    - lfrctthp (dir)
+        - lfrctthp (dir)
+            - 25083 gsb.flc
+        - srf (dir)
+            - 20386 hcnjd.nsq
+            //- 143480 jjlz.mtq
+            - rwvdvvsf (dir)
+                - 20009 bqz
+               // - 133188 czdm
+            //- 88782 sbmhf
+            // - 143464 wbs.vmh 
+            - wvhhr (dir)
+                - 60445 vrwdvnh.jhf // 10445 vrwdvnh.jhf
+        - 165285 vlfc
+        - 202701 wbs.vmh
+    - pjzpjjq (dir)
+        - 14329 chgbd.zjf
+        - dvlb (dir)
+            - bjfqsb (dir)
+            - fnwsmj (dir)
+            - 154127 gplzm
+            - 264923 qcp.qvc
+        - 212284 pjc
+        - qlrn (dir)
+        - 225566 rhzgmnb.nhd
+        - 145766 sppmmj.dzz
+        - vpltwcs (dir)
+        - 125853 wbs.vmh
+    - rbtbtt (dir)
+    - 203148 sppmmj
+    - 130200 sppmmj.bmm
+    - tlhttrgs (dir)
+    - 248929 vsbvlr
+  - lfrctthp (dir)
+  - 133395 lfrctthp.tlv 
+  - ltwmz (dir)
+  - nmzntmcf (dir)
+  - vhj (dir)
+  - 256180 wbs.vmh
+  - 257693 zsntdzf 
+
+
+- Hand Sum: 25083 + 10445 + 
+
+- If the route may go inside a directory and then go outside, and then go inside again, is really difficult. So I am going to think the logic going through a path that assums that this is not going to happen. 
+- Keep in mind that directories inside other directories that both addends are at most 100.000, they both count into the final count. 
+
+Directories: 
+- 1
+- 11 
+- 111
+- 1111
+- 111
+- 1112
+- 11121
+- 11122
+- 112
+
+
+ 
