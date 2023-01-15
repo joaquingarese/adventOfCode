@@ -58,21 +58,60 @@ Wich are the different commands that may appear in the strings of the array
   - 257693 zsntdzf 
 
 
-- Hand Sum: 25083 + 10445 + 
-
 - If the route may go inside a directory and then go outside, and then go inside again, is really difficult. So I am going to think the logic going through a path that assums that this is not going to happen. 
 - Keep in mind that directories inside other directories that both addends are at most 100.000, they both count into the final count. 
 
 Directories: 
-- 1
-- 11 
-- 111
-- 1111
-- 111
-- 1112
-- 11121
-- 11122
-- 112
+- 1 (826898)
+- 11 (671649)
+- 111 (367986)
+- 1111 (25083)
+- 1112 (20386)
+- 11121 (20009)
+- 11122 (60445)
+- 112 (723798)
+
+
+ const hardCodedResult = 60445 + 20009 + 25083; // 105537
+
+ dataExample4: 
+ 1
+ 11
+ 111
+ 1111
+ 1112
+ 11121
+ ----- Error 1: No pone al 11122, lo saltea
+ 11122
+ 112
+ 1121
+ 11211
+ 112111
+ 
+ 11212
+ 11213
+ 112131
+ 112132
+ 1121321
+ 11214
+ 11215
+ 113
+ 1131
+ 114
+ 115
+ 1151
+ 11511
+ 1152
+ 11521
+ 11522
+ 115221
+ 12
+ 121
+ 122
+ 1221
+ 1222
+ 12221
+
 
 
  
